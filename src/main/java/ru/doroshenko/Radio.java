@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @NoArgsConstructor
 //@AllArgsConstructor
-@Data
+
+
 
 public class Radio {
     private int firstChannel;
@@ -17,35 +19,15 @@ public class Radio {
     private int currentVolume;
 
 
-
     public Radio(int firstChannel, int finalChannel, int currentChannel, int minVolume, int maxVolume, int currentVolume) {
         this.finalChannel = finalChannel;
         this.firstChannel = firstChannel;
         this.maxVolume = maxVolume;
         this.minVolume = minVolume;
-
-
-        // определяет канал в установленном диапазоне
-        if (currentChannel > finalChannel) {
-            this.currentChannel = firstChannel;
-            return;
-        }
-        if (currentChannel < firstChannel) {
-            this.currentChannel = finalChannel;
-            return;
-        }
+        this.currentVolume = currentVolume;
         this.currentChannel = currentChannel;
 
-        // определяет громкость в установленном диапазоне
-        if (currentVolume > maxVolume) {
-            this.currentVolume = maxVolume;
-            return;
-        }
-        if (currentVolume < minVolume) {
-            this.currentVolume = minVolume;
-            return;
-        }
-        this.currentVolume = currentVolume;
+
 
     }
 
@@ -120,4 +102,27 @@ public class Radio {
         currentChannel--;
     }
 
+    // определяет канал в установленном диапазоне
+    public void addCurrentChannel() {
+        if (currentChannel > finalChannel) {
+            this.currentChannel = firstChannel;
+            return;
+        }
+        if (currentChannel < firstChannel) {
+            this.currentChannel = finalChannel;
+
+        }
+    }
+
+    // определяет громкость в установленном диапазоне
+    public void addCurrentVolume() {
+        if (currentVolume > maxVolume) {
+            this.currentVolume = maxVolume;
+            return;
+        }
+        if (currentVolume < minVolume) {
+            this.currentVolume = minVolume;
+
+        }
+    }
 }

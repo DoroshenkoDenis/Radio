@@ -16,18 +16,21 @@ class RadioTest {
     @Test
     void setCurrentChannel() {
         Radio radio = new Radio(0, 99, 66, 0, 100, 50);
+        radio.addCurrentChannel();
         assertEquals(66, radio.getCurrentChannel());
     }
 
     @Test
     void setCurrentChannelOverFinal() {
         Radio radio = new Radio(0, 99, 100, 0, 100, 50);
+        radio.addCurrentChannel();
         assertEquals(0, radio.getCurrentChannel());
     }
 
     @Test
     void setCurrentChannelLessFirst() {
         Radio radio = new Radio(0, 99, -100, 0, 100, 50);
+        radio.addCurrentChannel();
         assertEquals(99, radio.getCurrentChannel());
     }
 
@@ -48,18 +51,21 @@ class RadioTest {
     @Test
     void setCurrentVolume() {
         Radio radio = new Radio(0, 99, 0, 0, 100, 50);
+        radio.addCurrentVolume();
         assertEquals(50, radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeOverMax() {
         Radio radio = new Radio(0, 99, 0, 0, 100, 150);
+        radio.addCurrentVolume();
         assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeLessMin() {
         Radio radio = new Radio(0, 99, 0, 0, 100, -500);
+        radio.addCurrentVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
 
