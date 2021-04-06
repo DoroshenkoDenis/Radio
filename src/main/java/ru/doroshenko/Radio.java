@@ -1,5 +1,13 @@
 package ru.doroshenko;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+//@AllArgsConstructor
+@Data
+
 public class Radio {
     private int firstChannel;
     private int finalChannel;
@@ -7,6 +15,8 @@ public class Radio {
     private int maxVolume;
     private int currentChannel;
     private int currentVolume;
+
+
 
     public Radio(int firstChannel, int finalChannel, int currentChannel, int minVolume, int maxVolume, int currentVolume) {
         this.finalChannel = finalChannel;
@@ -40,46 +50,45 @@ public class Radio {
     }
 
 
-
-    public int getFirstChannel() {
-        return firstChannel;
-    }
-
-    public void setFirstChannel(int firstChannel) {
-        this.firstChannel = firstChannel;
-    }
-
-    public int getFinalChannel() {
-        return finalChannel;
-    }
-
-    public void setFinalChannel(int finalChannel) {
-        this.finalChannel = finalChannel;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public int getCurrentChannel() {
-        return currentChannel;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+//    public int getFirstChannel() {
+//        return firstChannel;
+//    }
+//
+//    public void setFirstChannel(int firstChannel) {
+//        this.firstChannel = firstChannel;
+//    }
+//
+//    public int getFinalChannel() {
+//        return finalChannel;
+//    }
+//
+//    public void setFinalChannel(int finalChannel) {
+//        this.finalChannel = finalChannel;
+//    }
+//
+//    public int getMinVolume() {
+//        return minVolume;
+//    }
+//
+//    public void setMinVolume(int minVolume) {
+//        this.minVolume = minVolume;
+//    }
+//
+//    public int getMaxVolume() {
+//        return maxVolume;
+//    }
+//
+//    public void setMaxVolume(int maxVolume) {
+//        this.maxVolume = maxVolume;
+//    }
+//
+//    public int getCurrentChannel() {
+//        return currentChannel;
+//    }
+//
+//    public int getCurrentVolume() {
+//        return currentVolume;
+//    }
 
     public void increaseVolume() {
         if (currentVolume == maxVolume) {
@@ -110,4 +119,5 @@ public class Radio {
         }
         currentChannel--;
     }
+
 }
