@@ -1,12 +1,23 @@
 package ru.doroshenko;
 
 public class Radio {
-    private int firstChannel = 0;
-    private int finalChannel = 9;
-    private int minVolume = 0;
-    private int maxVolume = 10;
+    private int firstChannel;
+    private int finalChannel;
+    private int minVolume;
+    private int maxVolume;
     private int currentChannel;
     private int currentVolume;
+
+
+    public Radio(int firstChannel, int finalChannel, int minVolume, int maxVolume, int currentChannel, int currentVolume) {
+        this.finalChannel = finalChannel;
+        this.firstChannel = firstChannel;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+        this.currentVolume = currentVolume;
+        this.currentChannel = currentChannel;
+    }
+
 
     public int getFirstChannel() {
         return firstChannel;
@@ -44,32 +55,8 @@ public class Radio {
         return currentChannel;
     }
 
-    public void setCurrentChannel(int currentChannel) {
-        if (currentChannel > finalChannel) {
-            this.currentChannel = finalChannel;
-            return;
-        }
-        if (currentChannel < firstChannel) {
-            this.currentChannel = firstChannel;
-            return;
-        }
-        this.currentChannel = currentChannel;
-    }
-
     public int getCurrentVolume() {
         return currentVolume;
-    }
-
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > maxVolume){
-            this.currentVolume = maxVolume;
-            return;
-        }
-        if (currentVolume < minVolume){
-            this.currentVolume = minVolume;
-            return;
-        }
-        this.currentVolume = currentVolume;
     }
 
     public void increaseVolume() {
@@ -100,5 +87,29 @@ public class Radio {
             return;
         }
         currentChannel--;
+    }
+
+    // определяет канал в установленном диапазоне
+    public void addCurrentChannel() {
+        if (currentChannel > finalChannel) {
+            this.currentChannel = firstChannel;
+            return;
+        }
+        if (currentChannel < firstChannel) {
+            this.currentChannel = finalChannel;
+
+        }
+    }
+
+    // определяет громкость в установленном диапазоне
+    public void addCurrentVolume() {
+        if (currentVolume > maxVolume) {
+            this.currentVolume = maxVolume;
+            return;
+        }
+        if (currentVolume < minVolume) {
+            this.currentVolume = minVolume;
+
+        }
     }
 }

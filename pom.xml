@@ -55,7 +55,6 @@
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>
-<!--                                            <value>COVEREDRATIO</value> по умолчанию - покрываемое соотношение-->
                                             <minimum>100%</minimum>
                                         </limit>
                                     </limits>
