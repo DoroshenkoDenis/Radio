@@ -43,9 +43,9 @@ class RadioTest {
 
     @Test
     void switchChannelDownLessFirst() {
-        Radio radio = new Radio(0, 99, 0, 100, 99, 50);
+        Radio radio = new Radio(0, 99, 0, 100, 0, 50);
         radio.switchChannelDown();
-        assertEquals(98, radio.getCurrentChannel());
+        assertEquals(99, radio.getCurrentChannel());
     }
 
     @Test
