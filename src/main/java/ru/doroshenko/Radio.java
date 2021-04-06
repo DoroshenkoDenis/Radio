@@ -6,8 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-//@AllArgsConstructor
-
+@AllArgsConstructor
 
 
 public class Radio {
@@ -19,17 +18,17 @@ public class Radio {
     private int currentVolume;
 
 
-    public Radio(int firstChannel, int finalChannel, int currentChannel, int minVolume, int maxVolume, int currentVolume) {
-        this.finalChannel = finalChannel;
-        this.firstChannel = firstChannel;
-        this.maxVolume = maxVolume;
-        this.minVolume = minVolume;
-        this.currentVolume = currentVolume;
-        this.currentChannel = currentChannel;
-
-
-
-    }
+//    public Radio(int firstChannel, int finalChannel, int minVolume, int maxVolume, int currentChannel, int currentVolume) {
+//        this.finalChannel = finalChannel;
+//        this.firstChannel = firstChannel;
+//        this.maxVolume = maxVolume;
+//        this.minVolume = minVolume;
+//        this.currentVolume = currentVolume;
+//        this.currentChannel = currentChannel;
+//
+//
+//
+//    }
 
 
 //    public int getFirstChannel() {
