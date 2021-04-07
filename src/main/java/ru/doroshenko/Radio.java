@@ -25,11 +25,7 @@ public class Radio {
 //        this.minVolume = minVolume;
 //        this.currentVolume = currentVolume;
 //        this.currentChannel = currentChannel;
-//
-//
-//
 //    }
-
 
 //    public int getFirstChannel() {
 //        return firstChannel;
